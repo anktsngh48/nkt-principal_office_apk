@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Principal's Office, Deeksha Vedantu</title>
+<meta name="description" content="Notices and updates from the Principal's Office, Deeksha Vedantu.">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#f5f5f7; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73; --line:rgba(0,0,0,.08);
+  --accent:#0071e3; --accent-ink:#fff; --chip:rgba(0,0,0,.05); --bar:rgba(245,245,247,.72);
+  --glass:rgba(255,255,255,.72); --field:#f2f2f5; --danger:#d70015;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px -12px rgba(0,0,0,.14);
+  --shadow-h:0 2px 4px rgba(0,0,0,.05),0 22px 44px -16px rgba(0,0,0,.22);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#000; --card:#1c1c1e; --text:#f5f5f7; --muted:#98989d; --line:rgba(255,255,255,.12);
+    --accent:#0a84ff; --chip:rgba(255,255,255,.09); --bar:rgba(0,0,0,.62); --glass:rgba(255,255,255,.08);
+    --field:#2c2c2e; --danger:#ff453a;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px -12px rgba(0,0,0,.7);
+    --shadow-h:0 2px 4px rgba(0,0,0,.5),0 22px 44px -16px rgba(0,0,0,.85);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased; padding-bottom:calc(40px + env(safe-area-inset-bottom));
+  /* soft colour glow behind the header */
+  background-image:
+    radial-gradient(70% 38% at 12% -4%,rgba(10,132,255,.17),transparent 70%),
+    radial-gradient(55% 34% at 92% 2%,rgba(175,82,222,.15),transparent 70%),
+    radial-gradient(50% 30% at 60% 14%,rgba(255,45,85,.08),transparent 70%);
+  background-repeat:no-repeat;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.hero{padding:calc(44px + env(safe-area-inset-top)) 0 20px}
+.brand{
+  display:inline-block;margin:0 0 20px;padding:7px 16px;border-radius:999px;
+  background:var(--glass);border:1px solid var(--line);font-size:15px;font-weight:600;letter-spacing:-.01em;
+  -webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);
+}
+h1{
+  margin:0;font-size:clamp(40px,11vw,68px);line-height:1;font-weight:800;letter-spacing:-.04em;
+  background:linear-gradient(100deg,#0a84ff 0%,#af52de 55%,#ff2d55 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  padding-bottom:.08em;
+}
+.lede{margin:12px 0 0;max-width:34ch;color:var(--muted);font-size:20px;line-height:1.35;letter-spacing:-.01em}
+.lede:empty,.brand:empty{display:none}
+
+.bar{
+  position:sticky;top:0;z-index:10;padding:10px 0 12px;
+  background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(22px);backdrop-filter:saturate(180%) blur(22px);
+}
+.search{
+  display:flex;align-items:center;gap:10px;background:var(--glass);border:1px solid var(--line);
+  border-radius:14px;padding:0 14px;height:44px;transition:box-shadow .2s,border-color .2s;
+}
+.search:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+.search svg{flex:none;opacity:.5}
+.search input{
+  flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:16px;height:100%;
+}
+.list{display:flex;flex-direction:column;gap:14px;padding:10px 0 24px}
+
+/* Cards. Each card carries its own accent colour in --c (and a readable text colour on it in --ink). */
+.card{
+  --c:var(--accent);
+  --ring:inset 0 0 0 1px color-mix(in srgb,var(--c) 22%,transparent);
+  position:relative;overflow:hidden;border-radius:26px;
+  background:linear-gradient(150deg,color-mix(in srgb,var(--c) 26%,var(--card)) 0%,color-mix(in srgb,var(--c) 9%,var(--card)) 100%);
+  box-shadow:var(--shadow),0 18px 34px -24px color-mix(in srgb,var(--c) 60%,transparent),var(--ring);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.card.enter{animation:rise .6s cubic-bezier(.2,.8,.2,1) backwards}
+.is-faq,.is-link,.is-form{cursor:pointer}
+@media (hover:hover){
+  .card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-h),0 26px 42px -24px color-mix(in srgb,var(--c) 65%,transparent),var(--ring);
+  }
+}
+.cover{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--chip)}
+.row{padding:18px 20px 20px}
+.main{flex:1;min-width:0}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 8px;font-size:13px;color:color-mix(in srgb,var(--text) 78%,var(--card))}
+.date{white-space:nowrap;font-size:13px;font-weight:400;letter-spacing:0;color:color-mix(in srgb,var(--text) 78%,var(--card))}
+.meta .date{margin-left:auto}
+/* No tag: there is no meta row; the title leads and the date sits at the right end of the title line. */
+.titlerow{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.titlerow .title{flex:1;min-width:0}
+.toggle>span:first-child{flex:1;min-width:0}
+.toggle .date{align-self:center}
+/* Tags are solid pills so they stand out from the tinted card. */
+.tag{
+  display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;
+  font-weight:650;font-size:12.5px;line-height:1.2;letter-spacing:.005em;
+}
+.tag{
+  background:var(--c,var(--accent));color:var(--tagink,#fff);
+  box-shadow:0 3px 8px -3px color-mix(in srgb,var(--c,var(--accent)) 70%,transparent);
+}
+.title{margin:0;font-size:19px;line-height:1.25;font-weight:650;letter-spacing:-.018em}
+.toggle{
+  all:unset;box-sizing:border-box;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;width:100%;cursor:pointer;
+}
+.toggle:focus-visible,.btn:focus-visible,.close:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:2px}
+.chev{
+  flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;margin-top:-1px;
+  background:color-mix(in srgb,var(--c,var(--accent)) 18%,transparent);
+  color:color-mix(in srgb,var(--c,var(--accent)) 40%,var(--text));
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.card.open .chev{transform:rotate(180deg)}
+.summary{margin:5px 0 0;color:color-mix(in srgb,var(--text) 74%,var(--card));font-size:15.5px;line-height:1.45}
+.rich{margin-top:12px;font-size:16px;line-height:1.55}
+.rich p{margin:0 0 10px}
+.rich p:last-child{margin-bottom:0}
+.rich a{color:color-mix(in srgb,var(--c,var(--accent)) 40%,var(--text));text-decoration:none;word-break:break-word}
+.rich a:hover{text-decoration:underline}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s cubic-bezier(.2,.8,.2,1)}
+.panel>.inner{overflow:hidden;min-height:0}
+.card.open .panel{grid-template-rows:1fr}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;cursor:pointer;text-decoration:none;
+  font:inherit;font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;
+  background:color-mix(in srgb,var(--c,var(--accent)) 22%,var(--card));
+  color:color-mix(in srgb,var(--c,var(--accent)) 40%,var(--text));
+  transition:transform .15s,filter .2s,background .2s;
+}
+.btn svg{width:16px;height:16px;flex:none}
+.btn:hover{filter:brightness(.96)}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--c,var(--accent));color:var(--ink,var(--accent-ink))}
+.btn[disabled]{opacity:.55;cursor:default}
+.btn.wide{width:100%;padding:14px 20px;font-size:17px}
+/* In a link card the whole card opens the link; the PDF button stays separately clickable. */
+.is-link .go::after{content:"";position:absolute;inset:0}
+.is-link .go:active{transform:none}
+.is-link .actions .btn:not(.go){position:relative;z-index:1}
+
+.empty,.error{text-align:center;color:var(--muted);padding:64px 16px;font-size:16px}
+.error button{margin-top:14px}
+.skel{height:104px;border-radius:26px;background:linear-gradient(100deg,var(--card) 30%,var(--chip) 50%,var(--card) 70%);background-size:300% 100%;animation:shimmer 1.4s linear infinite}
+.banner{margin:0 0 4px;padding:10px 14px;border-radius:14px;background:rgba(255,149,0,.14);color:var(--text);font-size:14px}
+
+/* Form sheet */
+dialog{
+  border:0;padding:0;background:var(--card);color:var(--text);width:min(560px,100%);max-height:92dvh;
+  border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.35);margin:auto;overflow:hidden;
+}
+dialog[open]{display:flex;flex-direction:column;animation:pop .34s cubic-bezier(.2,.8,.2,1)}
+dialog::backdrop{background:rgba(0,0,0,.38);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.sheet{display:flex;flex-direction:column;min-height:0;max-height:92dvh}
+.sheet-head{
+  display:flex;align-items:center;gap:12px;padding:20px 20px 14px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--c,var(--accent)) 13%,transparent),transparent);
+}
+.sheet-head h3{flex:1;min-width:0;margin:0;font-size:20px;line-height:1.2;font-weight:650;letter-spacing:-.018em}
+.close{
+  flex:none;border:0;cursor:pointer;width:32px;height:32px;border-radius:50%;background:var(--chip);color:var(--muted);
+  font-size:20px;line-height:1;display:grid;place-items:center;
+}
+.sheet-body{padding:6px 20px 8px;overflow:auto;-webkit-overflow-scrolling:touch}
+.sheet-foot{padding:14px 20px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.field{margin:0 0 18px}
+.field>label,.field>.lbl{display:block;font-size:14px;font-weight:600;margin:0 0 7px}
+.req{color:var(--danger)}
+.field :where(input:not([type=checkbox]):not([type=radio]),select,textarea){
+  width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--field);
+  border:1.5px solid transparent;border-radius:14px;padding:13px 14px;outline:0;transition:border-color .2s,box-shadow .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.field select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%238e8e93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;
+}
+.field textarea{resize:vertical;min-height:100px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--c,var(--accent));box-shadow:0 0 0 4px color-mix(in srgb,var(--c,var(--accent)) 22%,transparent)}
+.field input[type=file]{
+  padding:8px;font-size:15px;color:var(--muted);background:transparent;
+  border:1.5px dashed color-mix(in srgb,var(--text) 24%,transparent);border-radius:14px;
+}
+.field input[type=file]::file-selector-button{
+  margin-right:12px;border:0;border-radius:999px;padding:8px 16px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;
+  background:color-mix(in srgb,var(--c,var(--accent)) 16%,transparent);
+  color:color-mix(in srgb,var(--c,var(--accent)) 65%,var(--text));
+}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+.choices{display:flex;flex-direction:column;gap:6px}
+.choice{
+  display:flex;align-items:center;gap:10px;background:var(--field);border-radius:14px;padding:12px 14px;cursor:pointer;font-size:16px;
+  transition:background .2s,box-shadow .2s;
+}
+.choice:has(input:checked){
+  background:color-mix(in srgb,var(--c,var(--accent)) 13%,var(--field));
+  box-shadow:inset 0 0 0 1.5px var(--c,var(--accent));
+}
+.choice input{width:18px;height:18px;accent-color:var(--c,var(--accent));margin:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.err{color:var(--danger);font-size:14px;min-height:20px;margin:0 0 10px}
+.done{text-align:center;padding:40px 22px 32px}
+.done .tick{width:68px;height:68px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;background:color-mix(in srgb,#34c759 18%,transparent);color:#34c759}
+.done .tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .5s .15s ease forwards}
+.done h3{margin:0 0 6px;font-size:24px;font-weight:650;letter-spacing:-.02em}
+.done p{margin:0 0 22px;color:var(--muted)}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes shimmer{to{background-position:-300% 0}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .row{padding:16px 18px 18px}
+  dialog{margin:auto 0 0;width:100%;max-width:100%;border-radius:28px 28px 0 0}
+  dialog[open]{animation:sheetUp .38s cubic-bezier(.2,.8,.2,1)}
+  @keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .done .tick path{stroke-dashoffset:0!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="brand" id="school"></p>
+    <h1 id="heading"></h1>
+    <p class="lede" id="subheading"></p>
+  </header>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search notices" autocomplete="off" aria-label="Search notices">
+    </label>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="banner"></div>
+  <div class="list" id="list" aria-live="polite"></div>
+</main>
+
+<dialog id="dlg" aria-label="Form"></dialog>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- Config ---------- */
+const CONFIG = {
+  // Paste your deployed Google Apps Script web app URL here (see README.md; the backend code is in Code.gs).
+  // While empty, the page shows demo notices so you can preview the design.
+  SCRIPT_URL: '',
+  MAX_FILE_MB: 5,
+  CACHE_KEY: 'po-notices-v1'
+};
+
+/* ---------- Demo data (used only when SCRIPT_URL is empty) ---------- */
+const DEMO = {
+  settings: {
+    'School Name': 'Deeksha Vedantu',
+    'Heading': "Principal's Office",
+    'Subheading': 'Notices, updates and forms for students.'
+  },
+  notices: [
+    {Title:'Leave application', Summary:'Planning to be absent? Let us know in advance.', Type:'Form', Form:'Leave Request', Tag:'Forms', Date:'25 Oct 2026', Pinned:'Yes'},
+    {Title:'Will classes run on Diwali week?', Summary:'Timings and holiday schedule.', Type:'Dropdown', Details:'Classes are off from 30 Oct to 2 Nov.\nRegular timings resume on Monday, 3 Nov.\nSee the full calendar: https://example.com/calendar', Tag:'Holidays', Date:'24 Oct 2026', PDF:'https://example.com/calendar.pdf'},
+    {Title:'Parent-teacher meeting', Summary:'Book your slot on the school portal.', Type:'Link', URL:'https://example.com/ptm', 'Button Text':'Book a slot', Tag:'Events', Date:'22 Oct 2026'},
+    {Title:'Library timings updated', Summary:'The library now stays open until 7 pm on weekdays.', Type:'Info', Tag:'General', Date:'20 Oct 2026'}
+  ],
+  forms: {
+    'Leave Request - Active': [
+      ['Name*','Class*','Reason','Supporting document','Photo'],
+      ['Text','Dropdown','Long text','PDF','Picture'],
+      ['','Class 8','','',''],
+      ['','Class 9','','',''],
+      ['','Class 10','','','']
+    ]
+  }
+};
+
+/* ---------- Helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const norm = k => String(k).toLowerCase().replace(/[^a-z0-9]/g, '');
+
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.className = v;
+    else if (k === 'text') e.textContent = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v === true ? '' : v);
+  }
+  kids.flat().forEach(c => { if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(c)); });
+  return e;
+}
+const svg = html => { const s = el('span'); s.innerHTML = html; return s.firstChild; };
+const ICON = {
+  chev: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
+  tick: '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  out: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>',
+  doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>',
+  form: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.4 2.6a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>'
+};
+
+function safeUrl(u) {
+  if (!u) return '';
+  try { const x = new URL(u, location.href); return /^https?:$/.test(x.protocol) ? x.href : ''; } catch { return ''; }
+}
+function driveId(u) {
+  if (!/(drive|docs)\.google\.com/.test(u)) return null;
+  const m = u.match(/\/d\/([\w-]{20,})/) || u.match(/[?&]id=([\w-]{20,})/);
+  return m ? m[1] : null;
+}
+const imgUrl = u => { const id = driveId(u); return id ? `https://drive.google.com/thumbnail?id=${id}&sz=w1600` : u; };
+const pdfUrl = u => { const id = driveId(u); return id ? `https://drive.google.com/file/d/${id}/view` : u; };
+
+// Render plain text safely: paragraphs from line breaks, URLs become links.
+function rich(text) {
+  const box = el('div', { class: 'rich' });
+  String(text).split(/\n+/).filter(Boolean).forEach(line => {
+    const p = el('p');
+    let last = 0;
+    for (const m of line.matchAll(/https?:\/\/[^\s<]+/g)) {
+      const url = m[0].replace(/[.,;:!?)]+$/, '');
+      p.append(line.slice(last, m.index));
+      const href = safeUrl(url);
+      p.append(href ? el('a', { href, target: '_blank', rel: 'noopener noreferrer', text: url }) : url);
+      last = m.index + url.length;
+    }
+    p.append(line.slice(last));
+    box.append(p);
+  });
+  return box;
+}
+
+/* ---------- Colours ---------- */
+// Optional "Color" column in the Notices sheet: a name from PALETTE or a hex code such as #ff8a00.
+// Without one, cards are coloured by position (see CYCLE below).
+const PALETTE = { blue:'#0a84ff', green:'#34c759', orange:'#ff9500', pink:'#ff2d55', purple:'#af52de', teal:'#30b0c7', indigo:'#5e5ce6', red:'#ff3b30', yellow:'#ffcc00', gray:'#8e8e93' };
+// Card colours follow the card's position: red, orange, purple, blue, then the same four again.
+// An explicit "Color" in the sheet still wins for that notice.
+const CYCLE = ['red', 'orange', 'purple', 'blue'];
+function colorFor(raw, i) {
+  const r = String(raw || '').trim().toLowerCase();
+  if (Object.prototype.hasOwnProperty.call(PALETTE, r)) return PALETTE[r];
+  if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/.test(r)) return r.length === 4 ? '#' + [...r.slice(1)].map(c => c + c).join('') : r;
+  return PALETTE[CYCLE[i % CYCLE.length]];
+}
+function inkFor(hex) {   // dark text on light colours (yellow), white on the rest
+  const n = parseInt(hex.slice(1), 16);
+  return 0.299 * (n >> 16 & 255) + 0.587 * (n >> 8 & 255) + 0.114 * (n & 255) > 170 ? '#1d1d1f' : '#ffffff';
+}
+function tagInkFor(hex) {   // whichever of white / near-black reads better on the pill (WCAG contrast)
+  const lum = h => { const n = parseInt(h.slice(1), 16);
+    return [n >> 16 & 255, n >> 8 & 255, n & 255].map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; })
+      .reduce((a, v, i) => a + v * [0.2126, 0.7152, 0.0722][i], 0); };
+  const L = lum(hex), contrast = o => (Math.max(L, o) + 0.05) / (Math.min(L, o) + 0.05);
+  return contrast(1) >= contrast(lum('#1d1d1f')) ? '#ffffff' : '#1d1d1f';
+}
+function paint(node, color) {
+  node.style.setProperty('--c', color);
+  node.style.setProperty('--ink', inkFor(color));
+  node.style.setProperty('--tagink', tagInkFor(color));
+}
+
+/* ---------- State & data ---------- */
+const state = { notices: [], forms: {}, q: '', entered: false };
+
+// Page header text comes from the "Settings" sheet (School Name, Heading, Subheading).
+const DEFAULTS = { school: 'Deeksha Vedantu', heading: "Principal's Office" };
+function applySettings(raw) {
+  const s = {};
+  for (const k in (raw || {})) s[norm(k)] = String(raw[k] == null ? '' : raw[k]).trim();
+  const get = (names, fallback) => { for (const n of names) if (n in s) return s[n]; return fallback; };
+  const school = get(['schoolname', 'school', 'institute'], '') || DEFAULTS.school;
+  const heading = get(['heading', 'title', 'pagetitle', 'principalsoffice'], '') || DEFAULTS.heading;
+  const sub = get(['subheading', 'subtitle', 'tagline'], '');   // blank in the sheet hides the line
+  $('#school').textContent = school;
+  $('#heading').textContent = heading;
+  $('#subheading').textContent = sub;
+  document.title = heading + ', ' + school;
+}
+
+const NO = /^(no|false|0|hide|hidden|inactive|draft|off)$/i;
+const YES = /^(yes|true|1|pinned|pin|y)$/i;
+
+function toNotice(raw) {
+  const o = {};
+  for (const k in raw) o[norm(k)] = raw[k];
+  const pick = names => { for (const n of names) if (o[n] != null && String(o[n]).trim() !== '') return String(o[n]).trim(); return ''; };
+  const show = pick(['show', 'visible', 'status']);
+  if (show && NO.test(show)) return null;
+  const n = {
+    title: pick(['title', 'heading', 'notice', 'name']),
+    summary: pick(['summary', 'subtitle', 'description', 'shortdescription']),
+    details: pick(['details', 'answer', 'body', 'content', 'text']),
+    type: pick(['type', 'kind', 'style']).toLowerCase(),
+    url: pick(['url', 'link', 'redirecturl', 'redirect']),
+    button: pick(['buttontext', 'button', 'cta', 'linktext']),
+    form: pick(['form', 'formname', 'formsheet']),
+    image: pick(['image', 'picture', 'photo', 'imageurl']),
+    pdf: pick(['pdf', 'pdfurl', 'attachment']),
+    date: pick(['date', 'posted', 'publishedon']),
+    tag: pick(['tag', 'category', 'label']),
+    pinned: YES.test(pick(['pinned', 'pin'])),
+    rawColor: pick(['color', 'colour', 'accent', 'theme'])
+  };
+  if (!n.title) return null;
+  if (/faq|drop|accordion|expand/.test(n.type)) n.type = 'dropdown';
+  else if (/form/.test(n.type)) n.type = 'form';
+  else if (/link|redirect|url/.test(n.type)) n.type = 'link';
+  else if (/info|plain|text/.test(n.type)) n.type = 'info';
+  else n.type = n.form ? 'form' : n.url ? 'link' : n.details ? 'dropdown' : 'info';
+  return n;
+}
+
+function resolveForm(name) {
+  const keys = Object.keys(state.forms);
+  if (!keys.length) return null;
+  const q = (name || '').trim().toLowerCase();
+  let k = q ? (keys.find(x => x.toLowerCase() === q) || keys.find(x => x.toLowerCase().includes(q))) : (keys.length === 1 ? keys[0] : null);
+  return k ? { name: k, grid: state.forms[k] } : null;
+}
+
+const KINDS = {
+  text:'text', short:'text', string:'text', name:'text',
+  long:'textarea', longtext:'textarea', paragraph:'textarea', textarea:'textarea',
+  number:'number', numeric:'number', email:'email', phone:'tel', mobile:'tel', tel:'tel',
+  date:'date', time:'time', url:'url', link:'url',
+  dropdown:'select', select:'select', radio:'radio', choice:'radio',
+  checkbox:'checkbox', checkboxes:'checkbox', multiselect:'checkbox',
+  picture:'image', image:'image', photo:'image', pdf:'pdf', file:'file', document:'file'
+};
+
+// Row 1 = field labels, Row 2 = field types, Rows 3+ = options for dropdown / radio / checkbox columns.
+function parseForm(grid) {
+  const labels = grid[0] || [], types = grid[1] || [], fields = [];
+  labels.forEach((lab, i) => {
+    let label = String(lab || '').trim();
+    if (!label) return;
+    let required = /\*\s*$/.test(label);
+    label = label.replace(/\s*\*\s*$/, '').trim();
+    let t = String(types[i] || 'text').trim();
+    if (/\*|required/i.test(t)) { required = true; t = t.replace(/\*|\(?required\)?/ig, '').trim(); }
+    const parts = t.split(':');
+    const kindRaw = (parts.shift() || 'text').trim().toLowerCase().replace(/\s+/g, '') || 'text';
+    let options = parts.join(':').split(/[|,;]/).map(s => s.trim()).filter(Boolean);
+    if (!options.length) options = grid.slice(2).map(r => String((r || [])[i] || '').trim()).filter(Boolean);
+    let kind = KINDS[kindRaw] || 'text';
+    if (['select', 'radio', 'checkbox'].includes(kind) && !options.length) kind = 'text';
+    fields.push({ label, required, kind, options });
+  });
+  return fields;
+}
+
+/* ---------- Rendering ---------- */
+function render() {
+  const list = $('#list');
+  list.replaceChildren();
+  const q = state.q.trim().toLowerCase();
+  const items = state.notices.filter(n =>
+    !q || [n.title, n.summary, n.details, n.tag].join(' ').toLowerCase().includes(q));
+  if (!items.length) {
+    list.append(el('div', { class: 'empty', text: state.notices.length ? `Nothing matches \u201c${state.q.trim()}\u201d. Try a different word.` : 'No notices right now. New ones will appear here.' }));
+    return;
+  }
+  const enter = !state.entered;      // the cards slide in once, on first load, not on every search or refresh
+  items.forEach((n, i) => {
+    const c = card(n, enter);
+    if (enter) c.style.animationDelay = Math.min(i, 6) * 60 + 'ms';
+    list.append(c);
+  });
+  state.entered = true;
+}
+
+function actionsFor(n) {
+  const acts = [];
+  if (n.type === 'link') {
+    const href = safeUrl(n.url);
+    if (href) acts.push(el('a', { class: 'btn primary go', href, target: '_blank', rel: 'noopener noreferrer' }, n.button || 'Open', svg(ICON.out)));
+  }
+  if (n.type === 'form') {
+    const f = resolveForm(n.form);
+    acts.push(f
+      ? el('button', { class: 'btn primary', type: 'button', onclick: () => openForm(n, f) }, n.button || 'Fill in the form', svg(ICON.form))
+      : el('button', { class: 'btn', type: 'button', disabled: true, text: 'Form unavailable' }));
+  }
+  const pdf = safeUrl(n.pdf);
+  if (pdf) acts.push(el('a', { class: 'btn', href: pdfUrl(pdf), target: '_blank', rel: 'noopener noreferrer' }, svg(ICON.doc), 'View PDF'));
+  return acts.length ? el('div', { class: 'actions' }, acts) : null;
+}
+
+function card(n, enter) {
+  const faq = n.type === 'dropdown';
+  const form = n.type === 'form' ? resolveForm(n.form) : null;
+  const cls = ['card', faq && 'is-faq', n.type === 'link' && safeUrl(n.url) && 'is-link', form && 'is-form', enter && 'enter'];
+  const c = el('article', { class: cls.filter(Boolean).join(' ') });
+  paint(c, n.color);
+  const img = safeUrl(n.image);
+  if (img) c.append(el('img', { class: 'cover', src: imgUrl(img), alt: '', loading: 'lazy', referrerpolicy: 'no-referrer', onerror: e => e.target.remove() }));
+
+  const main = el('div', { class: 'main' });
+  const dateEl = n.date ? el('span', { class: 'date', text: n.date }) : null;
+  if (n.tag) main.append(el('div', { class: 'meta' }, el('span', { class: 'tag', text: n.tag }), dateEl));
+  const titleDate = n.tag ? null : dateEl;      // no tag: the title goes first and the date joins its line
+
+  if (faq) {
+    const id = 'p' + Math.random().toString(36).slice(2, 8);
+    const btn = el('button', { class: 'toggle', type: 'button', 'aria-expanded': 'false', 'aria-controls': id },
+      el('span', { text: n.title }), titleDate, el('span', { class: 'chev' }, svg(ICON.chev)));
+    main.append(el('h2', { class: 'title' }, btn));
+    if (n.summary) main.append(el('p', { class: 'summary', text: n.summary }));
+    const inner = el('div', { class: 'inner' }, n.details ? rich(n.details) : null, actionsFor(n));
+    const panel = el('div', { class: 'panel', id }, inner);
+    panel.inert = true;
+    main.append(panel);
+    const toggle = () => {
+      const open = !c.classList.contains('open');
+      c.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      panel.inert = !open;
+    };
+    btn.addEventListener('click', toggle);
+    c.addEventListener('click', e => { if (!e.target.closest('a,button,.panel')) toggle(); });
+  } else {
+    const h = el('h2', { class: 'title', text: n.title });
+    main.append(titleDate ? el('div', { class: 'titlerow' }, h, titleDate) : h);
+    if (n.summary) main.append(el('p', { class: 'summary', text: n.summary }));
+    if (n.details) main.append(rich(n.details));
+    const a = actionsFor(n);
+    if (a) main.append(a);
+    if (form) c.addEventListener('click', e => { if (!e.target.closest('a,button')) openForm(n, form); });
+  }
+  c.append(el('div', { class: 'row' }, main));
+  return c;
+}
+
+/* ---------- Form sheet ---------- */
+const dlg = $('#dlg');
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+dlg.addEventListener('close', () => { dlg.replaceChildren(); dlg.style.removeProperty('--c'); dlg.style.removeProperty('--ink'); });
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function readBase64(blob) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(String(r.result).split(',')[1] || '');
+    r.onerror = () => rej(new Error('Could not read the file.'));
+    r.readAsDataURL(blob);
+  });
+}
+async function shrinkImage(file) {
+  if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return file;
+  try {
+    const bmp = await createImageBitmap(file);
+    const scale = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+    const cv = document.createElement('canvas');
+    cv.width = Math.round(bmp.width * scale); cv.height = Math.round(bmp.height * scale);
+    const ctx = cv.getContext('2d');
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.drawImage(bmp, 0, 0, cv.width, cv.height);
+    const blob = await new Promise(r => cv.toBlob(r, 'image/jpeg', 0.82));
+    return blob && blob.size < file.size ? new File([blob], file.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' }) : file;
+  } catch { return file; }
+}
+async function filePayload(input, kind) {
+  let f = input.files[0];
+  if (!f) return null;
+  if (kind === 'pdf' && f.type !== 'application/pdf') throw new Error('Please choose a PDF file.');
+  if (kind === 'image' && !f.type.startsWith('image/')) throw new Error('Please choose an image.');
+  if (kind === 'file' && f.type !== 'application/pdf' && !f.type.startsWith('image/')) throw new Error('Please choose a PDF or an image.');
+  if (f.type.startsWith('image/')) f = await shrinkImage(f);
+  if (f.size > CONFIG.MAX_FILE_MB * 1024 * 1024) throw new Error(`"${f.name}" is larger than ${CONFIG.MAX_FILE_MB} MB.`);
+  return { name: f.name, type: f.type, data: await readBase64(f) };
+}
+
+function openForm(n, f) {
+  const fields = parseForm(f.grid);
+  const getters = [];
+  const sheetBody = el('div', { class: 'sheet-body' });
+
+  fields.forEach((fd, i) => {
+    const id = 'f' + i;
+    const reqMark = fd.required ? el('span', { class: 'req', text: ' *' }) : null;
+    const wrap = el('div', { class: 'field' });
+    const grouped = fd.kind === 'radio' || fd.kind === 'checkbox';
+    wrap.append(grouped ? el('div', { class: 'lbl' }, fd.label, reqMark) : el('label', { for: id }, fd.label, reqMark));
+    let input;
+    switch (fd.kind) {
+      case 'textarea':
+        input = el('textarea', { id, rows: 4, maxlength: 5000, required: fd.required });
+        getters.push(() => input.value.trim()); wrap.append(input); break;
+      case 'select':
+        input = el('select', { id, required: fd.required }, el('option', { value: '', text: 'Select\u2026' }), fd.options.map(o => el('option', { value: o, text: o })));
+        getters.push(() => input.value); wrap.append(input); break;
+      case 'radio': {
+        const box = el('div', { class: 'choices', role: 'radiogroup' });
+        fd.options.forEach(o => box.append(el('label', { class: 'choice' }, el('input', { type: 'radio', name: id, value: o, required: fd.required }), o)));
+        getters.push(() => { const r = box.querySelector('input:checked'); return r ? r.value : ''; });
+        wrap.append(box); break;
+      }
+      case 'checkbox': {
+        const box = el('div', { class: 'choices' });
+        fd.options.forEach(o => box.append(el('label', { class: 'choice' }, el('input', { type: 'checkbox', value: o }), o)));
+        getters.push(() => [...box.querySelectorAll('input:checked')].map(x => x.value));
+        wrap.append(box); break;
+      }
+      case 'image': case 'pdf': case 'file': {
+        const accept = fd.kind === 'image' ? 'image/*' : fd.kind === 'pdf' ? 'application/pdf' : 'application/pdf,image/*';
+        input = el('input', { id, type: 'file', accept, required: fd.required });
+        getters.push(() => filePayload(input, fd.kind));
+        wrap.append(input, el('div', { class: 'hint', text: `Up to ${CONFIG.MAX_FILE_MB} MB` })); break;
+      }
+      default:
+        input = el('input', { id, type: fd.kind, required: fd.required, maxlength: fd.kind === 'text' ? 500 : null, inputmode: fd.kind === 'number' ? 'decimal' : null, step: fd.kind === 'number' ? 'any' : null, autocomplete: 'off' });
+        getters.push(() => input.value.trim()); wrap.append(input);
+    }
+    sheetBody.append(wrap);
+  });
+
+  const hp = el('input', { class: 'hp', name: 'website', tabindex: '-1', autocomplete: 'off', 'aria-hidden': 'true' });
+  const err = el('p', { class: 'err', role: 'alert' });
+  const submit = el('button', { class: 'btn primary wide', type: 'submit', text: 'Submit' });
+  sheetBody.append(hp, err);
+
+  const form = el('form', { class: 'sheet' },
+    el('div', { class: 'sheet-head' },
+      el('h3', { text: n.title }),
+      el('button', { class: 'close', type: 'button', 'aria-label': 'Close', text: '\u00d7', onclick: () => dlg.close() })),
+    sheetBody,
+    el('div', { class: 'sheet-foot' }, submit));
+
+  form.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    err.textContent = '';
+    submit.disabled = true; submit.textContent = 'Submitting\u2026';
+    try {
+      const values = {};
+      for (let i = 0; i < fields.length; i++) {
+        const v = await getters[i]();
+        if (fields[i].required && fields[i].kind === 'checkbox' && !v.length) throw new Error(`Please choose at least one option for "${fields[i].label}".`);
+        values[fields[i].label] = v;
+      }
+      if (CONFIG.SCRIPT_URL) {
+        const res = await fetch(CONFIG.SCRIPT_URL, {
+          method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({ form: f.name, notice: n.title, website: hp.value, values })
+        });
+        const j = await res.json();
+        if (!j.ok) throw new Error(j.error || 'Could not submit. Please try again.');
+      } else { await sleep(700); }
+      form.replaceChildren(el('div', { class: 'done' },
+        el('div', { class: 'tick' }, svg(ICON.tick)),
+        el('h3', { text: 'Thank you' }),
+        el('p', { text: 'Your response has been submitted.' }),
+        el('button', { class: 'btn primary', type: 'button', text: 'Done', onclick: () => dlg.close() })));
+    } catch (e) {
+      err.textContent = e && e.message ? e.message : 'Could not submit. Please try again.';
+      submit.disabled = false; submit.textContent = 'Submit';
+    }
+  });
+
+  dlg.replaceChildren(form);
+  paint(dlg, n.color);
+  dlg.showModal();
+}
+
+/* ---------- Loading ---------- */
+function apply(d) {
+  applySettings(d.settings);
+  state.forms = d.forms || {};
+  const items = (d.notices || []).map(toNotice).filter(Boolean);
+  state.notices = [...items.filter(n => n.pinned), ...items.filter(n => !n.pinned)];
+  state.notices.forEach((n, i) => { n.color = colorFor(n.rawColor, i); });
+  render();
+}
+function showSkeleton() {
+  const l = $('#list'); l.replaceChildren();
+  for (let i = 0; i < 3; i++) l.append(el('div', { class: 'skel' }));
+}
+function showError() {
+  const l = $('#list'); l.replaceChildren(el('div', { class: 'error' },
+    el('div', { text: 'Could not load notices. Check your connection and try again.' }),
+    el('button', { class: 'btn', type: 'button', text: 'Retry', onclick: load })));
+}
+
+async function load() {
+  if (!CONFIG.SCRIPT_URL) {
+    $('#banner').replaceChildren(el('p', { class: 'banner', text: 'Preview mode: showing sample notices. Set SCRIPT_URL in index.html to connect your Google Sheet.' }));
+    apply(DEMO);
+    return;
+  }
+  let cached = null;
+  try { cached = JSON.parse(localStorage.getItem(CONFIG.CACHE_KEY)); } catch {}
+  if (cached && cached.notices) apply(cached); else showSkeleton();
+  try {
+    const sep = CONFIG.SCRIPT_URL.includes('?') ? '&' : '?';
+    const r = await fetch(CONFIG.SCRIPT_URL + sep + 't=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    apply(d);
+    try { localStorage.setItem(CONFIG.CACHE_KEY, JSON.stringify(d)); } catch {}
+  } catch { if (!cached) { applySettings({}); showError(); } }
+}
+
+$('#q').addEventListener('input', e => { state.q = e.target.value; render(); });
+load();
+})();
+</script>
+</body>
+</html>
+
+<!-- Backend code: Code.gs. Sheet layout and setup steps: README.md. -->
