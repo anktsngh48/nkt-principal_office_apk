@@ -62,7 +62,7 @@ import java.util.Locale;
 public class MainActivity extends Activity {
 
     // >>> TYPE THE PAGE ADDRESS THE APP OPENS HERE (between the quotes) <<<
-    private static final String START_URL = "https://YOUR-USERNAME.github.io/principals-office/";
+    private static final String START_URL = "https://anktsngh48.github.io/nkt-principal_office/";
 
     private static final String APP_NAME = "Principal's Office";
     private static final long SPLASH_MAX_MS = 8000;
