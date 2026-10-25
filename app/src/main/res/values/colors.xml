@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#F5F5F7</color>
+    <color name="ink">#1D1D1F</color>
+    <color name="muted">#6E6E73</color>
+    <color name="accent">#0071E3</color>
+    <color name="splash_bg">#FFFFFF</color>
+    <color name="icon_bg">#FFFFFF</color>
+</resources>
